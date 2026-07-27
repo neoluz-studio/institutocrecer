@@ -1449,3 +1449,19 @@ button {
     transform: none;
   }
 }
+.wa-icon{
+    width:22px;
+    height:22px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.button-large .wa-icon{
+    width:24px;
+    height:24px;
+}
+
+.whatsapp-float .wa-icon{
+    width:34px;
+    height:34px;
+}
