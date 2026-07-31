@@ -14,7 +14,7 @@ const WHATSAPP_MESSAGES = {
     "",
     "Quiero recibir información sobre el Curso de Operador de Autoelevador.",
     "",
-    "Quisiera conocer la próxima fecha, modalidad, horarios, valor, ubicación y requisitos de inscripción."
+    " Quisiera conocer la próxima fecha en mi ciudad, valor y requisitos de inscripción."
   ].join("\n"),
 
   renovacion: [
@@ -22,7 +22,7 @@ const WHATSAPP_MESSAGES = {
     "",
     "Quiero consultar por la Renovación del Carnet de Operador de Autoelevador.",
     "",
-    "¿Podrían indicarme los requisitos, la próxima fecha, el valor y la documentación que debo presentar?"
+    "¿Podrían indicarme el valor y la documentación que debo presentar? "
   ].join("\n"),
 
   experiencia: [
