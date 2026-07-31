@@ -1,19 +1,57 @@
-const WHATSAPP_NUMBER = "5493853047698";
-const WHATSAPP_MESSAGE = [
-  "Hola, Instituto Crecer.",
-  "",
-  "Quiero recibir información sobre el curso de Operador de Autoelevador.",
-  "",
-  "¿Podrían indicarme próxima fecha, modalidad, horarios, valor, ubicación y requisitos de inscripción?"
-].join("\n");
+const WHATSAPP_NUMBER = "5492657676136";
 
-function getWhatsAppUrl() {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+const WHATSAPP_MESSAGES = {
+  general: [
+    "Hola, Instituto Crecer.",
+    "",
+    "Quiero recibir información sobre sus capacitaciones.",
+    "",
+    "¿Podrían indicarme las próximas fechas, horarios, valores y requisitos?"
+  ].join("\n"),
+
+  "curso-inicial": [
+    "Hola, Instituto Crecer.",
+    "",
+    "Quiero recibir información sobre el Curso de Operador de Autoelevador.",
+    "",
+    "Quisiera conocer la próxima fecha, modalidad, horarios, valor, ubicación y requisitos de inscripción."
+  ].join("\n"),
+
+  renovacion: [
+    "Hola, Instituto Crecer.",
+    "",
+    "Quiero consultar por la Renovación del Carnet de Operador de Autoelevador.",
+    "",
+    "¿Podrían indicarme los requisitos, la próxima fecha, el valor y la documentación que debo presentar?"
+  ].join("\n"),
+
+  experiencia: [
+    "Hola, Instituto Crecer.",
+    "",
+    "Tengo experiencia operando autoelevadores y quiero consultar por la obtención del carnet.",
+    "",
+    "¿Podrían indicarme cómo es la evaluación, cuáles son los requisitos, la próxima fecha y el valor?"
+  ].join("\n")
+};
+
+function getWhatsAppUrl(messageType = "general") {
+  const selectedMessage =
+    WHATSAPP_MESSAGES[messageType] || WHATSAPP_MESSAGES.general;
+
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    selectedMessage
+  )}`;
 }
 
 function initializeWhatsAppLinks() {
-  document.querySelectorAll("[data-whatsapp]").forEach((link) => {
-    link.href = getWhatsAppUrl();
+  const whatsappLinks = document.querySelectorAll(
+    "[data-whatsapp], [data-whatsapp-type]"
+  );
+
+  whatsappLinks.forEach((link) => {
+    const messageType = link.dataset.whatsappType || "general";
+
+    link.href = getWhatsAppUrl(messageType);
     link.target = "_blank";
     link.rel = "noopener noreferrer";
   });
@@ -35,7 +73,10 @@ function initializeHeader() {
   };
 
   updateHeader();
-  window.addEventListener("scroll", updateHeader, { passive: true });
+
+  window.addEventListener("scroll", updateHeader, {
+    passive: true
+  });
 }
 
 function initializeMobileMenu() {
@@ -47,20 +88,33 @@ function initializeMobileMenu() {
   const setMenuState = (open) => {
     mobileMenu.classList.toggle("open", open);
     mobileMenu.setAttribute("aria-hidden", String(!open));
+
     menuButton.setAttribute("aria-expanded", String(open));
-    menuButton.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
-    menuButton.innerHTML = `<i data-lucide="${open ? "x" : "menu"}"></i>`;
+    menuButton.setAttribute(
+      "aria-label",
+      open ? "Cerrar menú" : "Abrir menú"
+    );
+
+    menuButton.innerHTML = `
+      <i data-lucide="${open ? "x" : "menu"}"></i>
+    `;
+
     document.body.classList.toggle("menu-open", open);
+
     initializeIcons();
   };
 
   menuButton.addEventListener("click", () => {
-    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    const isOpen =
+      menuButton.getAttribute("aria-expanded") === "true";
+
     setMenuState(!isOpen);
   });
 
   mobileMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => setMenuState(false));
+    link.addEventListener("click", () => {
+      setMenuState(false);
+    });
   });
 
   window.addEventListener("resize", () => {
@@ -83,28 +137,49 @@ function initializeFaq() {
       const willOpen = !item.classList.contains("open");
 
       items.forEach((otherItem) => {
-        const otherButton = otherItem.querySelector(".faq-button");
-        const otherAnswer = otherItem.querySelector(".faq-answer");
+        const otherButton =
+          otherItem.querySelector(".faq-button");
+
+        const otherAnswer =
+          otherItem.querySelector(".faq-answer");
 
         otherItem.classList.remove("open");
-        otherButton?.setAttribute("aria-expanded", "false");
-        if (otherAnswer) otherAnswer.style.maxHeight = "0px";
+
+        otherButton?.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        if (otherAnswer) {
+          otherAnswer.style.maxHeight = "0px";
+        }
       });
 
       if (willOpen) {
         item.classList.add("open");
-        button.setAttribute("aria-expanded", "true");
-        answer.style.maxHeight = `${answer.scrollHeight}px`;
+
+        button.setAttribute(
+          "aria-expanded",
+          "true"
+        );
+
+        answer.style.maxHeight =
+          `${answer.scrollHeight}px`;
       }
     });
   });
 }
 
 function initializeRevealAnimations() {
-  const elements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+  const elements = document.querySelectorAll(
+    ".reveal, .reveal-left, .reveal-right"
+  );
 
   if (!("IntersectionObserver" in window)) {
-    elements.forEach((element) => element.classList.add("visible"));
+    elements.forEach((element) => {
+      element.classList.add("visible");
+    });
+
     return;
   }
 
@@ -123,12 +198,18 @@ function initializeRevealAnimations() {
     }
   );
 
-  elements.forEach((element) => observer.observe(element));
+  elements.forEach((element) => {
+    observer.observe(element);
+  });
 }
 
 function initializeCurrentYear() {
   const year = document.getElementById("current-year");
-  if (year) year.textContent = String(new Date().getFullYear());
+
+  if (year) {
+    year.textContent =
+      String(new Date().getFullYear());
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
