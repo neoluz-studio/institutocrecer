@@ -1782,3 +1782,411 @@ grid-template-columns:1fr;
 }
 
 }
+/* ==================================
+   AGENDA DE PRÓXIMAS CAPACITACIONES
+================================== */
+
+.training-agenda {
+  position: relative;
+  padding: 34px 0 96px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.training-agenda-inner {
+  position: relative;
+  overflow: hidden;
+  padding: 52px;
+  border-radius: 34px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      circle at 90% 8%,
+      rgba(255, 255, 255, 0.2),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 5% 100%,
+      rgba(89, 201, 245, 0.27),
+      transparent 29%
+    ),
+    linear-gradient(
+      135deg,
+      #0d6faa 0%,
+      #148bd2 55%,
+      #23a9df 100%
+    );
+  box-shadow: 0 30px 75px rgba(15, 113, 174, 0.27);
+}
+
+.training-agenda-inner::before {
+  position: absolute;
+  top: -150px;
+  right: -130px;
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 50%;
+  content: "";
+}
+
+.training-agenda-inner::after {
+  position: absolute;
+  top: -70px;
+  right: -50px;
+  width: 230px;
+  height: 230px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 50%;
+  content: "";
+}
+
+.training-agenda-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 42px;
+}
+
+.training-agenda-heading {
+  max-width: 700px;
+}
+
+.training-agenda-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #c8efff;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.training-agenda-kicker svg {
+  width: 18px;
+  height: 18px;
+}
+
+.training-agenda-heading h2 {
+  max-width: 720px;
+  margin: 16px 0 0;
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(34px, 5vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.training-agenda-heading p {
+  max-width: 650px;
+  margin: 19px 0 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.training-agenda-highlight {
+  display: flex;
+  min-width: 270px;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.21);
+  border-radius: 19px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.training-agenda-highlight > svg {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  color: #d5f5ff;
+}
+
+.training-agenda-highlight small,
+.training-agenda-highlight strong {
+  display: block;
+}
+
+.training-agenda-highlight small {
+  color: rgba(255, 255, 255, 0.67);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.training-agenda-highlight strong {
+  margin-top: 5px;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.training-dates-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 38px;
+}
+
+.training-date-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 17px 38px rgba(8, 70, 108, 0.13);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.training-date-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 23px 47px rgba(8, 70, 108, 0.2);
+}
+
+.training-date-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.training-date-icon {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.training-date-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.training-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 27px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.status-open {
+  color: #11753b;
+  background: #ddf8e8;
+}
+
+.status-soon {
+  color: #a36a08;
+  background: #fff1ce;
+}
+
+.training-province {
+  display: block;
+  margin-top: 23px;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.training-date-card h3 {
+  margin: 7px 0 0;
+  color: var(--navy);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 21px;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+.training-date-info {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 21px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: var(--surface);
+}
+
+.training-date-info > svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  color: var(--primary);
+}
+
+.training-date-info small,
+.training-date-info strong {
+  display: block;
+}
+
+.training-date-info small {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.training-date-info strong {
+  margin-top: 4px;
+  color: var(--navy);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.training-date-link {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 22px;
+  color: var(--primary-dark);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.training-date-link svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+}
+
+.training-date-link:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.training-agenda-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 32px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.19);
+}
+
+.training-agenda-question {
+  display: flex;
+  max-width: 620px;
+  align-items: center;
+  gap: 15px;
+}
+
+.training-agenda-question > span {
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.training-agenda-question svg {
+  width: 23px;
+  height: 23px;
+}
+
+.training-agenda-question strong {
+  display: block;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+.training-agenda-question p {
+  margin: 5px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.training-agenda-footer .button-whatsapp {
+  flex: 0 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.27);
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .training-agenda-header {
+    flex-direction: column;
+  }
+
+  .training-agenda-highlight {
+    width: 100%;
+  }
+
+  .training-dates-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .training-agenda-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* CELULAR */
+
+@media (max-width: 720px) {
+  .training-agenda {
+    padding: 20px 0 72px;
+  }
+
+  .training-agenda-inner {
+    padding: 34px 20px;
+    border-radius: 28px;
+  }
+
+  .training-agenda-heading h2 {
+    font-size: 34px;
+  }
+
+  .training-agenda-heading p {
+    font-size: 15px;
+  }
+
+  .training-dates-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .training-date-card {
+    padding: 20px;
+  }
+
+  .training-agenda-footer .button {
+    width: 100%;
+  }
+}
