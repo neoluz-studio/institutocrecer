@@ -2190,3 +2190,1411 @@ grid-template-columns:1fr;
     width: 100%;
   }
 }
+/* ==========================================
+   GESTART PREMIUM UI POLISH
+   Mejora estética sin cambiar clases
+========================================== */
+
+
+/* SUAVIZAR TODO */
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* CONTENEDORES */
+
+.section {
+  position: relative;
+}
+
+
+.container {
+  position: relative;
+}
+
+
+/* TARJETAS GENERALES */
+
+.card,
+.course-card,
+.benefit-card,
+.step-card,
+.testimonial-card,
+.faq-item,
+.about-info-card,
+.course-feature {
+
+  border-radius: 34px;
+
+  border-color:
+  rgba(20,139,210,.12);
+
+  box-shadow:
+
+  0 25px 70px
+  rgba(17,50,74,.08);
+
+  transition:
+  transform .35s ease,
+  box-shadow .35s ease;
+
+}
+
+
+.card:hover,
+.course-card:hover,
+.benefit-card:hover,
+.step-card:hover,
+.testimonial-card:hover {
+
+  transform:
+  translateY(-10px);
+
+  box-shadow:
+
+  0 35px 90px
+  rgba(20,139,210,.18);
+
+}
+
+
+
+/* BOTONES MAS PREMIUM */
+
+.button {
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+
+.button::before {
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+  linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent
+  );
+
+
+  transform:
+  translateX(-120%);
+
+  transition:.6s;
+
+}
+
+
+.button:hover::before {
+
+  transform:
+  translateX(120%);
+
+}
+
+
+
+
+.button-primary {
+
+  border-radius:
+
+  18px;
+
+  box-shadow:
+
+  0 18px 40px
+  rgba(20,139,210,.32);
+
+}
+
+
+
+.button-secondary {
+
+  border-radius:
+
+  18px;
+
+}
+
+
+
+
+/* HEADER MAS ELEGANTE */
+
+.site-header {
+
+  border-radius:
+
+  0 0 28px 28px;
+
+}
+
+
+
+.header-inner {
+
+  padding-inline:
+
+  8px;
+
+}
+
+
+
+/* HERO */
+
+.hero {
+
+
+  background:
+
+  radial-gradient(
+    circle at 80% 20%,
+    rgba(89,201,245,.22),
+    transparent 35%
+  ),
+
+  linear-gradient(
+    180deg,
+    #fff,
+    #f3faff
+  );
+
+}
+
+
+
+.hero h1 {
+
+  letter-spacing:
+
+  -.07em;
+
+}
+
+
+.hero-image-card {
+
+
+  border-radius:
+
+  45px;
+
+
+  box-shadow:
+
+  0 35px 90px
+  rgba(17,50,74,.16);
+
+
+}
+
+
+
+
+/* IMAGENES */
+
+img {
+
+  transition:
+
+  transform .5s ease;
+
+}
+
+
+figure:hover img {
+
+  transform:
+
+  scale(1.05);
+
+}
+
+
+
+
+/* CURSOS */
+
+.course-card-image {
+
+  border-radius:
+
+  34px 34px 0 0;
+
+}
+
+
+
+.course-card-content {
+
+  padding:
+
+  34px;
+
+}
+
+
+
+
+/* TESTIMONIOS */
+
+.testimonial-card {
+
+
+  background:
+
+  linear-gradient(
+    145deg,
+    #ffffff,
+    #f7fcff
+  );
+
+}
+
+
+
+.testimonial-avatar {
+
+  box-shadow:
+
+  0 10px 25px
+  rgba(20,139,210,.35);
+
+}
+
+
+
+
+/* CTA FINAL */
+
+.final-cta-inner {
+
+
+  border-radius:
+
+  45px;
+
+
+  position:relative;
+
+
+  overflow:hidden;
+
+
+}
+
+
+.final-cta-inner::after {
+
+
+  content:"";
+
+
+  position:absolute;
+
+
+  width:350px;
+
+  height:350px;
+
+
+  right:-100px;
+
+  bottom:-120px;
+
+
+  border-radius:50%;
+
+
+  background:
+
+  rgba(255,255,255,.12);
+
+
+}
+
+
+
+/* AGENDA */
+
+.training-agenda-inner {
+
+
+  border-radius:
+
+  45px;
+
+
+  box-shadow:
+
+  0 40px 100px
+  rgba(15,113,174,.35);
+
+
+}
+
+
+
+/* INPUTS */
+
+input,
+textarea,
+select {
+
+
+  border-radius:
+
+  18px!important;
+
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:720px){
+
+
+.section {
+
+ padding:
+ 70px 0;
+
+}
+
+
+.hero-image-card {
+
+ border-radius:
+ 32px;
+
+}
+
+
+.card,
+.course-card,
+.benefit-card,
+.step-card {
+
+ border-radius:
+ 26px;
+
+}
+
+
+}
+/* =====================================================
+   GESTART PREMIUM BRAND EXPERIENCE
+   Layer visual premium - no modifica estructura
+===================================================== */
+
+
+/* VARIABLES PREMIUM */
+
+:root {
+
+  --premium-glow:
+  rgba(20,139,210,.35);
+
+  --premium-dark:
+  #08263b;
+
+  --premium-white:
+  rgba(255,255,255,.92);
+
+}
+
+
+
+/* ===============================
+   BODY PREMIUM
+================================ */
+
+body {
+
+  background:
+
+  linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f5fbff 100%
+  );
+
+}
+
+
+
+/* ===============================
+   HEADER PREMIUM
+================================ */
+
+
+.site-header {
+
+  backdrop-filter:
+
+  blur(24px);
+
+
+  background:
+
+  rgba(255,255,255,.75);
+
+
+}
+
+
+
+.site-header.scrolled {
+
+
+  box-shadow:
+
+  0 20px 60px
+  rgba(17,50,74,.12);
+
+
+}
+
+
+
+/* ===============================
+   HERO PREMIUM
+================================ */
+
+
+.hero {
+
+
+  background:
+
+
+  radial-gradient(
+    circle at 80% 10%,
+    rgba(89,201,245,.35),
+    transparent 30%
+  ),
+
+
+  radial-gradient(
+    circle at 15% 80%,
+    rgba(20,139,210,.12),
+    transparent 35%
+  ),
+
+
+  linear-gradient(
+    180deg,
+    #ffffff,
+    #f1f9fe
+  );
+
+
+}
+
+
+
+.hero h1 {
+
+
+  font-weight:
+
+  900;
+
+
+}
+
+
+
+.hero h1 span {
+
+
+  background:
+
+
+  linear-gradient(
+    120deg,
+    #0d6faa,
+    #32b9ed,
+    #148bd2
+  );
+
+
+  -webkit-background-clip:text;
+
+}
+
+
+
+.hero-text {
+
+
+  color:
+
+  #587285;
+
+
+}
+
+
+
+/* ===============================
+   IMAGEN PRINCIPAL PREMIUM
+================================ */
+
+
+.hero-image-card {
+
+
+  border:
+
+  10px solid
+  rgba(255,255,255,.85);
+
+
+  border-radius:
+
+  50px;
+
+
+  box-shadow:
+
+
+  0 45px 120px
+  rgba(17,50,74,.18);
+
+
+}
+
+
+
+.hero-image-card::after {
+
+
+  content:"";
+
+
+  position:absolute;
+
+
+  inset:0;
+
+
+  background:
+
+
+  linear-gradient(
+    180deg,
+    transparent 50%,
+    rgba(8,38,59,.45)
+  );
+
+
+}
+
+
+
+/* ===============================
+   TARJETAS PREMIUM
+================================ */
+
+
+.course-card,
+.benefit-card,
+.step-card,
+.testimonial-card,
+.faq-item,
+.mini-cards article {
+
+
+  background:
+
+
+  linear-gradient(
+    145deg,
+    #ffffff,
+    #f7fcff
+  );
+
+
+  border:
+
+  1px solid
+  rgba(20,139,210,.12);
+
+
+}
+
+
+
+.course-card:hover,
+.benefit-card:hover,
+.step-card:hover,
+.testimonial-card:hover {
+
+
+  transform:
+
+
+  translateY(-12px);
+
+
+  box-shadow:
+
+
+  0 40px 90px
+  rgba(20,139,210,.18);
+
+
+}
+
+
+
+/* ===============================
+   ICONOS PREMIUM
+================================ */
+
+
+.course-card-icon,
+.benefit-card > span,
+.mini-cards article > span {
+
+
+  box-shadow:
+
+
+  0 15px 35px
+  rgba(20,139,210,.25);
+
+
+}
+
+
+
+/* ===============================
+   BOTONES PREMIUM
+================================ */
+
+
+.button-primary {
+
+
+  background:
+
+
+  linear-gradient(
+    135deg,
+    #0d6faa,
+    #23a9df
+  );
+
+
+  border-radius:
+
+  16px;
+
+
+}
+
+
+
+.button-primary:hover {
+
+
+  box-shadow:
+
+
+  0 25px 55px
+  rgba(20,139,210,.45);
+
+
+}
+
+
+
+/* ===============================
+   TITULOS PREMIUM
+================================ */
+
+
+.section-heading h2,
+.about-content h2,
+.course-content h3,
+.final-cta h2 {
+
+
+  font-weight:
+
+  900;
+
+
+  letter-spacing:
+
+  -.055em;
+
+
+}
+
+
+
+/* ===============================
+   CTA PREMIUM
+================================ */
+
+
+.final-cta-inner {
+
+
+  position:
+
+  relative;
+
+
+  overflow:
+
+  hidden;
+
+
+  border-radius:
+
+  45px;
+
+
+}
+
+
+
+.final-cta-inner::before {
+
+
+  content:"";
+
+
+  position:absolute;
+
+
+  width:
+
+  500px;
+
+
+  height:
+
+  500px;
+
+
+  right:
+
+  -200px;
+
+
+  top:
+
+  -200px;
+
+
+  border-radius:
+
+  50%;
+
+
+  background:
+
+  rgba(255,255,255,.15);
+
+
+}
+
+
+
+/* ===============================
+   AGENDA PREMIUM
+================================ */
+
+
+.training-agenda-inner {
+
+
+  border-radius:
+
+  45px;
+
+
+  box-shadow:
+
+
+  0 45px 100px
+  rgba(13,111,170,.35);
+
+
+}
+
+
+
+/* ===============================
+   WHATSAPP PREMIUM
+================================ */
+
+
+.whatsapp-float {
+
+
+  width:
+
+  64px;
+
+
+  height:
+
+  64px;
+
+
+  box-shadow:
+
+
+  0 25px 55px
+  rgba(37,211,102,.35);
+
+
+}
+
+
+
+/* ===============================
+   SCROLL ANIMATION SUAVE
+================================ */
+
+
+.reveal,
+.reveal-left,
+.reveal-right {
+
+
+  transition:
+
+
+  opacity .9s ease,
+
+  transform .9s cubic-bezier(.16,1,.3,1);
+
+
+}
+/* =====================================================
+   INSTITUTO PREMIUM EXPERIENCE
+   Upgrade visual sin cambiar estructura
+===================================================== */
+
+
+/* BASE MAS ELEGANTE */
+
+body {
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f5fbff 100%
+    );
+
+}
+
+
+/* ==================================
+   HEADER INSTITUCIONAL
+================================== */
+
+
+.site-header {
+
+
+    background:
+
+    rgba(255,255,255,.86);
+
+
+    backdrop-filter:
+
+    blur(22px);
+
+
+}
+
+
+.site-header.scrolled {
+
+
+    box-shadow:
+
+    0 18px 55px
+    rgba(17,50,74,.12);
+
+
+}
+
+
+
+/* ==================================
+   HERO MAS AUTORIDAD
+================================== */
+
+
+.hero {
+
+
+background:
+
+
+radial-gradient(
+circle at 80% 15%,
+rgba(89,201,245,.30),
+transparent 32%
+),
+
+
+radial-gradient(
+circle at 10% 80%,
+rgba(20,139,210,.12),
+transparent 35%
+),
+
+
+linear-gradient(
+180deg,
+#ffffff,
+#eef8ff
+);
+
+
+}
+
+
+
+.hero h1 {
+
+
+font-weight:
+
+950;
+
+
+letter-spacing:
+
+-.07em;
+
+
+}
+
+
+
+.hero-text {
+
+
+font-size:
+
+19px;
+
+
+color:
+
+#536f82;
+
+
+}
+
+
+
+/* ==================================
+   IMAGEN PRINCIPAL
+================================== */
+
+
+.hero-image-card {
+
+
+border-radius:
+
+48px;
+
+
+border:
+
+10px solid rgba(255,255,255,.9);
+
+
+box-shadow:
+
+
+0 45px 100px
+rgba(17,50,74,.18);
+
+
+}
+
+
+
+.hero-image-card img {
+
+
+filter:
+
+saturate(1.08);
+
+
+}
+
+
+
+/* ==================================
+   BOTONES INSTITUTO
+================================== */
+
+
+.button-primary {
+
+
+border-radius:
+
+16px;
+
+
+background:
+
+
+linear-gradient(
+135deg,
+#0d6faa,
+#27b2eb
+);
+
+
+box-shadow:
+
+
+0 20px 45px
+rgba(20,139,210,.35);
+
+
+}
+
+
+
+.button-primary:hover {
+
+
+transform:
+
+translateY(-4px);
+
+
+}
+
+
+
+
+/* ==================================
+   TARJETAS CURSOS
+================================== */
+
+
+.course-card {
+
+
+border-radius:
+
+32px;
+
+
+background:
+
+
+linear-gradient(
+145deg,
+#ffffff,
+#f6fbff
+);
+
+
+border:
+
+1px solid
+rgba(20,139,210,.14);
+
+
+}
+
+
+
+.course-card:hover {
+
+
+transform:
+
+translateY(-12px);
+
+
+box-shadow:
+
+
+0 35px 80px
+rgba(20,139,210,.20);
+
+
+}
+
+
+
+.course-card-image {
+
+
+border-radius:
+
+32px 32px 0 0;
+
+
+}
+
+
+
+/* ==================================
+   ICONOS
+================================== */
+
+
+.course-card-icon {
+
+
+box-shadow:
+
+
+0 20px 40px
+rgba(20,139,210,.30);
+
+
+}
+
+
+
+/* ==================================
+   SECCIONES
+================================== */
+
+
+.section-heading h2,
+.about-content h2,
+.course-content h3,
+.final-cta h2 {
+
+
+font-weight:
+
+950;
+
+
+letter-spacing:
+
+-.06em;
+
+
+}
+
+
+
+/* ==================================
+   BENEFICIOS
+================================== */
+
+
+.benefit-card {
+
+
+border-radius:
+
+28px;
+
+
+padding:
+
+34px;
+
+
+}
+
+
+
+.benefit-card:hover {
+
+
+box-shadow:
+
+
+0 30px 70px
+rgba(17,50,74,.14);
+
+
+}
+
+
+
+/* ==================================
+   TESTIMONIOS
+================================== */
+
+
+.testimonial-card {
+
+
+border-radius:
+
+30px;
+
+
+background:
+
+
+linear-gradient(
+145deg,
+#ffffff,
+#f7fcff
+);
+
+
+}
+
+
+
+.testimonial-avatar {
+
+
+box-shadow:
+
+
+0 15px 35px
+rgba(20,139,210,.35);
+
+
+}
+
+
+
+/* ==================================
+   AGENDA CAPACITACIONES
+================================== */
+
+
+.training-agenda-inner {
+
+
+border-radius:
+
+45px;
+
+
+box-shadow:
+
+
+0 45px 110px
+rgba(13,111,170,.35);
+
+
+}
+
+
+
+/* ==================================
+   CTA FINAL
+================================== */
+
+
+.final-cta-inner {
+
+
+border-radius:
+
+45px;
+
+
+}
+
+
+
+.final-cta-inner:hover {
+
+
+box-shadow:
+
+
+0 50px 120px
+rgba(20,139,210,.35);
+
+
+}
+
+
+
+/* ==================================
+   WHATSAPP
+================================== */
+
+
+.whatsapp-float {
+
+
+width:
+
+64px;
+
+
+height:
+
+64px;
+
+
+box-shadow:
+
+
+0 25px 60px
+rgba(37,211,102,.40);
+
+
+}
+
+
+
+/* ==================================
+   ANIMACION PREMIUM
+================================== */
+
+
+.course-card,
+.benefit-card,
+.step-card,
+.testimonial-card {
+
+
+transition:
+
+
+transform .35s ease,
+
+box-shadow .35s ease;
+
+
+}
